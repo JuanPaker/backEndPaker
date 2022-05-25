@@ -19,6 +19,8 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String img;
+    private String email;
+    private String contraseña;
 
 /*
     public void setNombre(String nuevoNombre) {
@@ -29,5 +31,13 @@ public class Persona {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 */
+
+    public void setEmail(String nuevoEmail) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setContraseña(String nuevaContraseña) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
