@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/inicio-sesion")
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class controller {
     
@@ -45,6 +45,8 @@ public class controller {
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
                                @RequestParam("apellido") String nuevoApellido,
+                               @RequestParam("ocuacion") String nuevaOcupacion,
+                               @RequestParam("acerca_de") String nuevoAcercaDe,
                                @RequestParam ("img") String nuevaImg,
                                @RequestParam ("email") String nuevoEmail,
                                @RequestParam ("contraseña") String nuevaContraseña){
@@ -53,15 +55,15 @@ public class controller {
         
         persona.setNombre (nuevoNombre);
         persona.setApellido (nuevoApellido);
-        persona.setImg (nuevaImg);
-        persona.setEmail (nuevoEmail);
-        persona.setContraseña (nuevaContraseña);
-        
-        ipersonaservice.savePersona(persona);
+//        persona.setImg (nuevaImg);
+//        persona.setEmail (nuevoEmail);
+//        persona.setContraseña (nuevaContraseña);
+//        
+//        ipersonaservice.savePersona(persona);
         return persona;
     }
     
-    @GetMapping("Personas/traer/perfil")
+    @GetMapping("personas/traer/perfil")
     public Persona findPersona(){
         return ipersonaservice.findPersona((long)1);
     }
