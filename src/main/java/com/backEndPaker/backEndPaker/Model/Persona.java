@@ -19,12 +19,13 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String ocupacion;
-    private String acerca_de;
-    private String fecha_nac;
+    private String acercaDe;
+    private String fechaNac;
     private String nacionalidad;
     private String mail;
-    private String sobre_mi;
-    private String url_img_background;
-    private String url_img_perfil;
+    private String sobreMi;
+    private String urlImgBackground;
+    private String urlImgPerfil;
 
+ 
 }

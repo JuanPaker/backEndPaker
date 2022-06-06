@@ -45,21 +45,30 @@ public class controller {
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
                                @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam("ocuacion") String nuevaOcupacion,
+                               @RequestParam("ocupacion") String nuevaOcupacion,
                                @RequestParam("acerca_de") String nuevoAcercaDe,
-                               @RequestParam ("img") String nuevaImg,
-                               @RequestParam ("email") String nuevoEmail,
-                               @RequestParam ("contraseña") String nuevaContraseña){
+                               @RequestParam("fecha_nac") String nuevaFechaNac,
+                               @RequestParam ("nacionalidad") String nuevaNacionalidad,
+                               @RequestParam ("mail") String nuevoMail,
+                               @RequestParam ("sobre_mi") String nuevoSobreMi,
+                               @RequestParam ("url_img_background") String nuevaUrlImgBackground,
+                               @RequestParam ("url_img_perfil") String nuevaUrlImgPerfil){
         
         Persona persona = ipersonaservice.findPersona(id);
         
         persona.setNombre (nuevoNombre);
         persona.setApellido (nuevoApellido);
-//        persona.setImg (nuevaImg);
-//        persona.setEmail (nuevoEmail);
-//        persona.setContraseña (nuevaContraseña);
-//        
-//        ipersonaservice.savePersona(persona);
+        persona.setOcupacion (nuevaOcupacion);
+        persona.setAcercaDe (nuevoAcercaDe);
+        persona.setFechaNac (nuevaFechaNac);
+        persona.setNacionalidad (nuevaNacionalidad);
+        persona.setMail (nuevoMail);
+        persona.setSobreMi (nuevoSobreMi);
+        persona.setUrlImgBackground (nuevaUrlImgBackground);
+        persona.setUrlImgPerfil (nuevaUrlImgPerfil);
+        
+        
+        ipersonaservice.savePersona(persona);
         return persona;
     }
     
