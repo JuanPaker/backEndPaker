@@ -4,6 +4,7 @@ import com.backEndPaker.backEndPaker.Interface.IPersonaService;
 import com.backEndPaker.backEndPaker.Model.Persona;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class controller {
+    
     
     @Autowired IPersonaService ipersonaservice;
     
@@ -41,16 +45,36 @@ public class controller {
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
                                @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam ("img") String nuevaImg){
+                               @RequestParam("ocupacion") String nuevaOcupacion,
+                               @RequestParam("acerca_de") String nuevoAcercaDe,
+                               @RequestParam("fecha_nac") String nuevaFechaNac,
+                               @RequestParam ("nacionalidad") String nuevaNacionalidad,
+                               @RequestParam ("mail") String nuevoMail,
+                               @RequestParam ("sobre_mi") String nuevoSobreMi,
+                               @RequestParam ("url_img_background") String nuevaUrlImgBackground,
+                               @RequestParam ("url_img_perfil") String nuevaUrlImgPerfil){
         
         Persona persona = ipersonaservice.findPersona(id);
         
         persona.setNombre (nuevoNombre);
         persona.setApellido (nuevoApellido);
-        persona.setImg (nuevaImg);
+        persona.setOcupacion (nuevaOcupacion);
+        persona.setAcercaDe (nuevoAcercaDe);
+        persona.setFechaNac (nuevaFechaNac);
+        persona.setNacionalidad (nuevaNacionalidad);
+        persona.setMail (nuevoMail);
+        persona.setSobreMi (nuevoSobreMi);
+        persona.setUrlImgBackground (nuevaUrlImgBackground);
+        persona.setUrlImgPerfil (nuevaUrlImgPerfil);
+        
         
         ipersonaservice.savePersona(persona);
         return persona;
+    }
+    
+    @GetMapping("personas/traer/perfil")
+    public Persona findPersona(){
+        return ipersonaservice.findPersona((long)1);
     }
     
 }

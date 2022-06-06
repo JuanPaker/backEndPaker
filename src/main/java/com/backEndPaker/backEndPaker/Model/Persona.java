@@ -18,16 +18,14 @@ public class Persona {
     private Long id;
     private String nombre;
     private String apellido;
-    private String img;
+    private String ocupacion;
+    private String acercaDe;
+    private String fechaNac;
+    private String nacionalidad;
+    private String mail;
+    private String sobreMi;
+    private String urlImgBackground;
+    private String urlImgPerfil;
 
-/*
-    public void setNombre(String nuevoNombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void SetImg(String nuevaImg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-*/
-    
+ 
 }
