@@ -43,8 +43,8 @@ public class controller {
     
     @PutMapping("/personas/editar/{id}")
     public Persona editPersona(@PathVariable Long id,
-                               @RequestParam("nombre") String nuevoNombre,
-                               @RequestParam("apellido") String nuevoApellido,
+                               @RequestParam("usuario") String nuevoUsuario,
+                               @RequestParam("password") String nuevoPassword/*,
                                @RequestParam("ocupacion") String nuevaOcupacion,
                                @RequestParam("acerca_de") String nuevoAcercaDe,
                                @RequestParam("fecha_nac") String nuevaFechaNac,
@@ -52,13 +52,13 @@ public class controller {
                                @RequestParam ("mail") String nuevoMail,
                                @RequestParam ("sobre_mi") String nuevoSobreMi,
                                @RequestParam ("url_img_background") String nuevaUrlImgBackground,
-                               @RequestParam ("url_img_perfil") String nuevaUrlImgPerfil){
+                               @RequestParam ("url_img_perfil") String nuevaUrlImgPerfil*/){
         
         Persona persona = ipersonaservice.findPersona(id);
         
-        persona.setNombre (nuevoNombre);
-        persona.setApellido (nuevoApellido);
-        persona.setOcupacion (nuevaOcupacion);
+        persona.setUsuario (nuevoUsuario);
+        persona.setPassword (nuevoPassword);
+        /*persona.setOcupacion (nuevaOcupacion);
         persona.setAcercaDe (nuevoAcercaDe);
         persona.setFechaNac (nuevaFechaNac);
         persona.setNacionalidad (nuevaNacionalidad);
@@ -66,7 +66,7 @@ public class controller {
         persona.setSobreMi (nuevoSobreMi);
         persona.setUrlImgBackground (nuevaUrlImgBackground);
         persona.setUrlImgPerfil (nuevaUrlImgPerfil);
-        
+        */
         
         ipersonaservice.savePersona(persona);
         return persona;
